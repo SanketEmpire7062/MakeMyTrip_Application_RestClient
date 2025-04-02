@@ -10,9 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class MakeMyTripService {
 
-    /*private static final String IRCTC_ENDPOINT_1 = "http://localhost:9090/ticket";
-    private static final String IRCTC_ENDPOINT_2 = "http://localhost:9090/ticket/{ticketId}";*/
-
+    
     @Value("${irctc.endpoint.book_ticket}")
     private String IRCTC_BOOK_TICKET_URL;
 
