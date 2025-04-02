@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Booking Form</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f1e9; /* Light beige */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            background-color: #e0dacd; /* Soft brownish tone */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #4a3624; /* Dark brown */
+        }
+        .form-control {
+            border: 2px solid #8b5e3c; /* Warm brown */
+        }
+        .btn-submit {
+            background-color: #6c757d; /* Gray */
+            color: white;
+        }
+        .btn-clear {
+            background-color: #a52a2a; /* Brownish Red */
+            color: white;
+        }
+        .btn-submit:hover {
+            background-color: #5a6268;
+        }
+        .btn-clear:hover {
+            background-color: #8b0000;
+        }
+        .search-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .search-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .search-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">Train Booking Form</h2>
+    <form th:action="bookticket" method="POST">
+        <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstName" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lastName" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Date of Journey</label>
+            <input type="date" class="form-control" name="doj" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">From</label>
+            <input type="text" class="form-control" name="fromStation" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">To</label>
+            <input type="text" class="form-control" name="toStation" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Train Number</label>
+            <input type="text" class="form-control" name="trainNumber" required>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="reset" class="btn btn-clear">Clear</button>
+        </div>
+    </form>
+
+    <!-- Search Ticket Link -->
+    <p class="search-link">
+        <a href="/searchTicket">Search for a Ticket</a>
+    </p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
